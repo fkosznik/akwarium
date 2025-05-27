@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    container_name: aquarium-backend
+    volumes:
+      - ./backend:/var/www/html
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: aquarium-frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1832 0%, #23214b 50%, #522c8d 100%);
+  color: #e5e6fa;
+  min-height: 100vh;
+}
+nav {
+  background: #171425;
+  color: #e5e6fa;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+nav a {
+  color: #e5e6fa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #9a7dda;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.login-container {
+  background: #23214b;
+  padding: 2em;
+  border-radius: 15px;
+  box-shadow: 0 2px 18px #222;
+  text-align: center;
+  width: 90vw;
+  max-width: 350px;
+}
+input[type='text'],
+input[type='password'] {
+  width: 90%;
+  margin: 0.5em 0;
+  padding: 0.6em;
+  border-radius: 7px;
+  border: 1px solid #5a569a;
+  background: #181529;
+  color: #e5e6fa;
+  font-size: 1em;
+}
+button {
+  padding: 0.7em 1.5em;
+  margin: 0.5em;
+  border: none;
+  background: #6b3fd1;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px #222;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #522c8d;
+}
+
+.controls {
+  text-align: center;
+  margin: 2em 0;
+}
+.aquarium-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+.aquarium {
+  background: #282653;
+  border: 5px solid #5632a8;
+  border-radius: 20px;
+  width: 350px;
+  min-height: 250px;
+  min-width: 200px;
+  margin-bottom: 1em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #171425;
+}
+.fish {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.fish:hover {
+  transform: scale(1.15) rotate(-7deg);
+  z-index: 2;
+}
+.water-stats {
+  background: #171425d9;
+  border-radius: 12px;
+  padding: 1em;
+  min-width: 160px;
+  max-width: 180px;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+.water-stats table {
+  width: 100%;
+  color: #e5e6fa;
+}
+.error-message {
+  color: #ff5370;
+  margin: 0.5em 0 0 0;
+  min-height: 2em;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1a1832cc;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.modal.active {
+  display: flex;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  justify-content: center;
+}
+.gallery .fish-card {
+  background: #23214b;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px #2d165d66;
+  padding: 1em;
+  width: 170px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.gallery .fish-card:hover {
+  transform: scale(1.06);
+}
+@media (max-width: 600px) {
+  .aquarium-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .aquarium,
+  .water-stats {
+    width: 94vw;
+    max-width: 98vw;
+    min-width: unset;
+  }
+}

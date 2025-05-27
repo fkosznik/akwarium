@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie – Moje Akwarium</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="login-page">
+    <div class="login-container">
+      <h1>🐟 Moje Akwarium</h1>
+      <form id="loginForm">
+        <input
+          type="text"
+          id="username"
+          placeholder="Nazwa użytkownika"
+          required
+        />
+        <input type="password" id="password" placeholder="Hasło" required />
+        <button type="submit">Zaloguj się</button>
+        <div class="error-message" id="loginError"></div>
+      </form>
+    </div>
+    <script>
+      document.getElementById('loginForm').onsubmit = function (e) {
+        e.preventDefault();
+        // Demo: dowolny login/hasło
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+        if (user.length < 3 || pass.length < 3) {
+          document.getElementById('loginError').innerText =
+            'Błędne dane logowania!';
+        } else {
+          window.location.href = 'index.html';
+        }
+      };
+    </script>
+  </body>
+</html>

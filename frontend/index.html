@@ -2,46 +2,51 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>🐠 Moje Akwarium</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moje Akwarium</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>🐟 Moje Akwarium</h1>
-    </header>
-
+    <nav>
+      <h2>🐠 Moje Akwarium</h2>
+      <ul>
+        <li><a href="index.html">Akwarium</a></li>
+        <li><a href="gallery.html">Galeria Ryb</a></li>
+        <li><a href="login.html" id="logoutBtn">Wyloguj</a></li>
+      </ul>
+    </nav>
     <main>
-      <div>
-        <button>Dodaj losową rybę</button><button>Wyczyść akwarium</button
-        ><button>Wybór tła</button><button>Usuń losową rybę</button
-        ><button>Wyłącz światło w akwarium</button>
-      </div>
-      <div><img src="https://placehold.co/600x400" alt="Akwarium" /></div>
-      <div>
-        <li>
-          <p>Jakość wody:</p>
-          <ul>
-            PH
-          </ul>
-          <ul>
-            Temp
-          </ul>
-          <ul>
-            Twardość
-          </ul>
-        </li>
-      </div>
-      <div>
-        <li>
-          Twoje ryby:
-          <ul>
-            Ryba x
-          </ul>
-        </li>
-      </div>
+      <section class="controls">
+        <button id="addFishBtn">Dodaj rybę</button>
+        <button id="removeFishBtn">Usuń rybę</button>
+        <button id="feedFishBtn">Nakarm rybkę</button>
+        <button id="cleanBtn">Wyczyść akwarium</button>
+        <button id="lightOnBtn">Włącz światło</button>
+        <button id="lightOffBtn">Wyłącz światło</button>
+      </section>
+      <section class="aquarium-section">
+        <div id="aquarium" class="aquarium"></div>
+        <div class="water-stats">
+          <h3>Statystyki wody</h3>
+          <table>
+            <tr>
+              <td>PH</td>
+              <td id="phStat"></td>
+            </tr>
+            <tr>
+              <td>Temperatura</td>
+              <td id="tempStat"></td>
+            </tr>
+            <tr>
+              <td>Twardość</td>
+              <td id="hardStat"></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <div id="fishModal" class="modal"></div>
+      <audio id="music" src="assets/aquarium.mp3" autoplay loop></audio>
     </main>
-
-    <script src="scripts.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
